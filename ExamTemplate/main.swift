@@ -19,13 +19,18 @@ import Foundation
  Make use of your test plan and algorithm to ensure your code is complete.
  
  */
-var inputToProcess : String = ""
+var angle1 : Int = Int.max
+var angle2 : Int = Int.max
+var angle3 : Int = Int.max
+
+
+//var inputToProcess : Int = Int.max
 
 // Loop until valid input is received
-while inputToProcess == "" {
+while angle1 == Int.max {
     
     // Show the prompt
-    print("Ask the question here? ", terminator: "")
+    print("Angle 1? ", terminator: "")
     
     // Get the user's input
     var input : String?
@@ -34,17 +39,61 @@ while inputToProcess == "" {
     // Use optional binding to see if the string can be unwrapped (to see if it is not nil)
     if let notNilInput = input {
         
-        // You probably need to add additional checks to be sure the
-        // input received is valid
-        // Add checks as needed...
-        
-        // Save the input given, as we are certain it's what we are looking for now
-        inputToProcess = notNilInput
-        
+        if let integerInput = Int(notNilInput) {
+            
+            if integerInput >= 1 && integerInput <= 178 {
+                //store the angle
+                angle1 = integerInput
+            }
+        }
     }
     
 }
 
+while angle2 == Int.max {
+    
+    // Show the prompt
+    print("Angle 2? ", terminator: "")
+    
+    // Get the user's input
+    var input : String?
+    input = readLine()
+    
+    // Use optional binding to see if the string can be unwrapped (to see if it is not nil)
+    if let notNilInput = input {
+        
+        if let integerInput = Int(notNilInput) {
+            
+            if integerInput >= 1 && integerInput <= 178 {
+                //store the angle
+                angle2 = integerInput
+            }
+        }
+    }
+    
+}
+while angle3 == Int.max {
+    
+    // Show the prompt
+    print("Angle 3? ", terminator: "")
+    
+    // Get the user's input
+    var input : String?
+    input = readLine()
+    
+    // Use optional binding to see if the string can be unwrapped (to see if it is not nil)
+    if let notNilInput = input {
+        
+        if let integerInput = Int(notNilInput) {
+            
+            if integerInput >= 1 && integerInput <= 178 {
+                //store the angle
+                angle3 = integerInput
+            }
+        }
+    }
+    
+}
 /*
  
  PROCESS
@@ -56,7 +105,19 @@ while inputToProcess == "" {
  */
 
 // Add 'process' code below....
-print("replace with process logic")
+
+
+if angle1 + angle2 + angle3 == 180{
+    if angle1 == angle2 && angle2 == angle3{
+     print("The triangle is equilateral")
+    } else if angle1 != angle2 && angle2 != angle3{
+        print("the triangle is scalene")
+    } else if angle1 + angle2 + angle3 >= 180 || angle1 + angle2 + angle3 <= 180{
+        print("error")
+    } else {
+        print("the triangle is isosceles")
+    }
+}
 
 
 /*
@@ -70,5 +131,6 @@ print("replace with process logic")
  */
 
 // Add 'output' code below... replace what is here as needed.
-print("The input given was: \(inputToProcess)")
+
+print("The input given was: \(angle1 + angle2 + angle3)")
 
